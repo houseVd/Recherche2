@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EROBLACK ALL GAMES</title>
+  <style>
+    /* 1. Reset Jeneral & Font */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Yon font ki pi modèn */
+    }
+
+    /* 2. Background Paj la (Deep Dark) */
+    body {
+      background-color: #080a10;
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(30, 50, 100, 0.3) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(60, 20, 80, 0.3) 0px, transparent 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #ffffff;
+    }
+
+    /* 3. Bwat Prensipal (Glassmorphism Effect) */
+    .premium-container {
+      background: rgba(255, 255, 255, 0.03); /* Transparan */
+      backdrop-filter: blur(12px); /* Efè vè flou */
+      border-radius: 24px;
+      padding: 40px;
+      width: 90%;
+      max-width: 450px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .premium-container:hover {
+      transform: translateY(-5px); /* Yon ti mouvman lè w sou li */
+    }
+
+    /* 4. Tit la */
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #60efff, #00ff87); /* Koulè gradyan sou tèks la */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* 5. Zòn Rechèch (Styled with Neon Glow) */
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    #searchBar {
+      width: 100%;
+      padding: 15px 15px 15px 45px; /* Espas pou ikon */
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #ffffff;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    /* Ikon L we a (senp HTML kòd) */
+    .search-wrapper::before {
+      content: '🔍';
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      opacity: 0.5;
+    }
+
+    #searchBar:focus {
+      border-color: #00ff87;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 135, 0.2);
+    }
+
+    /* 6. Lis Non yo */
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    /* 7. Stil Lyen/Bouton (Modern Card Style with Neon Hover) */
+    a {
+      display: block;
+      text-decoration: none;
+      color: #e0e0e0;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); /* Animasyon dous */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Efè lè sourit pase sou li (Hover Effect) */
+    a:hover {
+      color: #ffffff;
+      background: rgba(0, 255, 135, 0.08); /* background vè lacho */
+      border-color: #00ff87;
+      transform: scale(1.02); /* Yon ti agrandisman */
+      box-shadow: 0 5px 20px rgba(0, 255, 135, 0.2); /* Limyè neon jenerik */
+    }
+
+    /* Ti flèch la ki parèt lè w pase sourit la */
+    a::after {
+      content: '→';
+      position: absolute;
+      right: 20px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    a:hover::after {
+      opacity: 1;
+      right: 15px;
+    }
+
+    /* Lè w klike (active) */
+    a:active {
+      transform: scale(0.98);
+    }
+
+  </style>
+  <!-- Enpòte font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="premium-container">
+    <h2>EROBLACK GAME</h2>
+
+    <!-- Zòn rechèch la ak ikon -->
+    <div class="search-wrapper">
+      <input type="text" id="searchBar" onkeyup="filtreNon()" placeholder="Chache jwèt ou vle..">
+    </div>
+
+    <!-- Lis non yo ak lyen espesifik ou a -->
+    <ul id="lisMoun">
+      <li><a href="https://eroblack.github.io/Misyontire/" target="_blank">misyon tiré</a></li>
+      <li><a href="https://eroblack.github.io/Lottery/" target="_blank"> Lottery</a></li>
+      <li><a href="https://eroblack.github.io/32500730/" target="_blank">Roulette</a></li>
+      <li><a href="https://eroblack.github.io/Roulette2/" target="_blank">Roulette2</a></li>
+      <li><a href="https://eroblack.github.io/GadeVideo//" target="_blank">GADE VIDEO GENYEN </a></li>
+      <li><a href="https://eroblack.github.io/AvionBooster//" target="_blank">BOOSTER AVION 🚀</a></li>
+      <li><a href="https://eroblack.github.io/PeteBull//" target="_blank">SORTING CHALLENGE 5X WIN</a></li>
+      <li><a href="https://eroblack.github.io/DoubRoulette/" target="_blank">ROULETTE PRO 3</a></li>
+    </ul>
+  </div>
+
+  <!-- Kòd JavaScript pou filtre rechèch la -->
+  <script>
+    function filtreNon() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let ul = document.getElementById('lisMoun');
+      let li = ul.getElementsByTagName('li');
+
+      for (let i = 0; i < li.length; i++) {
+        let non = li[i].textContent || li[i].innerText;
+        // Nou bezwen gade tèks ki anndan lyen an
+        if (non.toLowerCase().indexOf(input) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
